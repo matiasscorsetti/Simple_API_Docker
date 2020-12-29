@@ -1,0 +1,9 @@
+{
+  "configfile": "custom1",
+  "key2_int": 1,
+  "key3_bool": true,
+  "key4_list": [ "a", "B", 3, "list" ],
+  "key5_dict": {
+    "i_am": "dictionary"
+  }
+}

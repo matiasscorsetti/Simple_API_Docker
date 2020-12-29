@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    ingestion-service:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        ports:
+            - "1001:80"
+        environment:
+            SITENAME: site
+        volumes:
+            - ./host_dir_config/:/app/dir_config/
+        restart: always
