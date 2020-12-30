@@ -8,6 +8,16 @@ services:
             dockerfile: Dockerfile
         image: simple_api_docker
 
+    api-site0:
+        image: simple_api_docker
+        ports:
+            - "1000:80"
+        environment:
+            SITENAME: site_0
+        volumes:
+            - ./host_dir_data/:/app/data/
+        restart: always
+
     api-site1:
         image: simple_api_docker
         ports:
