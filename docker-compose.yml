@@ -1,14 +1,11 @@
 version: '3.8'
 
-services:
+services:     
 
-    api-image:
+    api-site0:
         build:
             context: ./
             dockerfile: Dockerfile
-        image: simple_api_docker
-
-    api-site0:
         image: simple_api_docker
         ports:
             - "1000:80"
