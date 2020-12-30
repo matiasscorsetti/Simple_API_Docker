@@ -1,14 +1,31 @@
 version: '3.8'
 
 services:
-    ingestion-service:
+
+    api-image:
         build:
             context: ./
             dockerfile: Dockerfile
+        image: simple_api_docker
+
+    api-site1:
+        image: simple_api_docker
         ports:
             - "1001:80"
         environment:
-            SITENAME: site
+            SITENAME: site_1
         volumes:
-            - ./host_dir_config/:/app/dir_config/
+            - ./host_dir_config/custom_config_file_1.json:/app/config_file.json:ro
+            - ./host_dir_data/:/app/data/
+        restart: always
+
+    api-site2:
+        image: simple_api_docker
+        ports:
+            - "1002:80"
+        environment:
+            SITENAME: site_2
+        volumes:
+            - ./host_dir_config/custom_config_file_2.json:/app/config_file.json:ro
+            - ./host_dir_data/:/app/data/
         restart: always
