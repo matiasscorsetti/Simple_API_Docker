@@ -5,6 +5,6 @@ Steps:
 - download repository
 - install docker and docker-compose
 - go to the downloaded directory and run:
-  - docker-compose build
-  - docker-compose up
+  - ```docker-compose build```
+  - ```docker-compose up```
 - go to http://localhost:1001/docs
